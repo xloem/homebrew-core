@@ -28,6 +28,7 @@ class Libftdi < Formula
     mkdir "libftdi-build" do
       system "cmake", "..", "-DPYTHON_BINDINGS=OFF",
                             "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON",
+                            "-DFTDIPP=ON",
                             *std_cmake_args
       system "make", "install"
       pkgshare.install "../examples"
